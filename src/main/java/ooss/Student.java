@@ -9,7 +9,7 @@ public class Student extends Person {
     }
 
     public String introduce(){
-        return super.introduce().concat(" I am a student.");
+        return super.introduce().concat(String.format(" I am a student. I am in class %d.",this.klass.getNumber()));
     }
 
     public void join(Klass klass) {
