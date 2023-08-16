@@ -2,6 +2,7 @@ package ooss;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Teacher extends Person {
 
@@ -11,7 +12,10 @@ public class Teacher extends Person {
     }
 
     public String introduce(){
-        return super.introduce().concat(" I am a teacher.");
+        StringBuilder klassNumbers = new StringBuilder();
+        klassNumbers.append(this.klass.stream()
+                .map(number -> number.getNumber() + "").collect(Collectors.joining(", ")));
+        return super.introduce().concat(String.format(" I am a teacher. I teach Class %s.",klassNumbers));
     }
 
     public void assignTo(Klass klass) {
