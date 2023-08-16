@@ -22,8 +22,6 @@ public class Klass {
         return number;
     }
 
-
-
     public int getNumber() {
         return number;
     }
