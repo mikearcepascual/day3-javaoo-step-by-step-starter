@@ -1,13 +1,11 @@
 package ooss;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Teacher extends Person {
-    private Klass klass;
 
+    private List<Klass> klass = new ArrayList<>();
     public Teacher(int id, String name, int age) {
         super(id, name, age);
     }
@@ -17,10 +15,10 @@ public class Teacher extends Person {
     }
 
     public void assignTo(Klass klass) {
-        this.klass = klass;
+        this.klass.add(klass);
     }
 
     public boolean belongsTo(Klass klass) {
-        return klass.equals(this.klass);
+        return this.klass.contains(klass);
     }
 }
