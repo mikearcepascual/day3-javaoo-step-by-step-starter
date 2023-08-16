@@ -32,4 +32,8 @@ public class Student extends Person {
     public int getKlass(){
         return this.klass.getNumber();
     }
+
+    public String getName() {
+        return this.name;
+    }
 }
