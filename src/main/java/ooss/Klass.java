@@ -29,7 +29,12 @@ public class Klass {
 
 
     public void assignLeader(Student student) {
-        this.leader = student;
+        if(student.isIn(this)){
+            this.leader = student;
+        }
+        else{
+            System.out.println("It is not one of us.");
+        }
     }
 
     public boolean isLeader(Student student) {
