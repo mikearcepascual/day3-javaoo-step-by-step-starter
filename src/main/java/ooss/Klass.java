@@ -2,6 +2,7 @@ package ooss;
 
 public class Klass {
     private int number;
+    private Student leader;
 
     public Klass(int number){
         this.number = number;
@@ -27,4 +28,11 @@ public class Klass {
     }
 
 
+    public void assignLeader(Student student) {
+        this.leader = student;
+    }
+
+    public boolean isLeader(Student student) {
+        return leader.equals(student) ? true : false;
+    }
 }
