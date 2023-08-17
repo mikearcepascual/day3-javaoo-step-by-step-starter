@@ -12,10 +12,8 @@ public class Teacher extends Person {
     }
 
     public String introduce(){
-        StringBuilder klassNumbers = new StringBuilder();
-        klassNumbers.append(this.taughtClasses.stream()
-                .map(number -> number.getNumber() + "").collect(Collectors.joining(", ")));
-        return super.introduce().concat(String.format(" I am a teacher. I teach Class %s.",klassNumbers));
+
+        return super.introduce().concat(" I am a teacher.");
     }
 
     public void assignTo(Klass klass) {
